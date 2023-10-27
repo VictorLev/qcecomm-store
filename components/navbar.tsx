@@ -10,9 +10,9 @@ import Flag from "@/images/Flag_of_Quebec.svg";
 const Navbar = async () => {
     const categories = await getCategories();
     return ( 
-        <div className="border-b bg-blue-800">
+        <div className="mx-auto border-b bg-blue-800">
             <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 items-center">
+                <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 justify-center items-center">
                     <Image className="mx-2 flex rounded-lg border-2 border-white gap-x-2"
                         priority
                         src={Flag}

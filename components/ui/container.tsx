@@ -7,7 +7,7 @@ const Container: React.FC<ContainerProps> = ( {
     children
 }) => {
     return ( 
-        <div className="max-auto max-w-7xl">
+        <div className="flex justify-center max-w-7xl flex-col mx-auto">
             {children}
         </div>
      );
