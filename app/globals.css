@@ -7,3 +7,21 @@ body,
 :root{
   height: 100%;
 }
+
+.lg-view{
+  display:inline-block;
+}
+
+.sm-view{
+  display:none;
+}
+
+@media screen and (max-width: 640px) {
+  .lg-view{
+     display:none;
+  }
+
+  .sm-view{
+     display:inline-block;
+  }
+}

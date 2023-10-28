@@ -20,9 +20,10 @@ const Navbar = async () => {
                         width={100}
                         alt="Quebec Flag here"
                     />
-                    <Link href="/" className="ml-4 flex gap-x-2">
+                    <Link href="/" className="ml-4 gap-x-2 ">
                         <p className="font-bold text-white  text-xl">
-                            Quebec Shop Down Under
+                            <span className="lg-view">Quebec Store Down Under</span>
+                            <span className="sm-view">QSDU</span>
                         </p>
                     </Link>
                     <MainNav data={categories} />
