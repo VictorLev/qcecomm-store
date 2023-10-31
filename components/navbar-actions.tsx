@@ -3,6 +3,7 @@
 import { ShoppingCart } from "lucide-react";
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
+import useCart from "@/hooks/use-carts";
 
 
 const NavBarActions = () => {
@@ -12,9 +13,13 @@ const NavBarActions = () => {
         setIsMounted(true);
     }, []);
 
+    const cart = useCart();
+
     if(!isMounted) {
         return null
     }
+
+
 
     return ( 
         <div className="ml-auto  flex items-center gap-x-4">
@@ -24,7 +29,7 @@ const NavBarActions = () => {
                     color="blue"
                 />
                 <span className="ml-2 text-sm font-medium text-blue-800">
-                    0
+                    {cart.items.length}
                 </span>
             </Button>
         </div>

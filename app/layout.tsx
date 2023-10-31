@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import ModalProvider from '@/providers/modal-provider'
+import ToastProvider from '@/providers/toast-provider'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <ModalProvider />
+        <ToastProvider />
         <Navbar />
         {children}
         <Footer />
