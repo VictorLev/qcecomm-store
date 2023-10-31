@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import ModalProvider from '@/providers/modal-provider'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />
