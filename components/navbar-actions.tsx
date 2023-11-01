@@ -4,11 +4,13 @@ import { ShoppingCart } from "lucide-react";
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-carts";
+import { useRouter } from "next/navigation";
 
 
 const NavBarActions = () => {
     const [isMounted,setIsMounted] = useState(false)
 
+    const router = useRouter()
     useEffect(() => {
         setIsMounted(true);
     }, []);
@@ -23,7 +25,7 @@ const NavBarActions = () => {
 
     return ( 
         <div className="ml-auto  flex items-center gap-x-4">
-            <Button className="flex items-center rounded-2xl bg-white px-4 py-2">
+            <Button onClick={() => router.push('/cart')} className="flex items-center rounded-2xl bg-white px-4 py-2">
                 <ShoppingCart
                     size={20}
                     color="blue"
