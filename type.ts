@@ -1,7 +1,12 @@
 export interface Billboard {
     id:string;
     label: string;
-    imageUrl:string;
+    images:BillboardImage[];
+}
+
+export interface BillboardImage {
+    id: string;
+    url: string;
 }
 
 export interface Category {
@@ -18,10 +23,10 @@ export interface Product {
     isFreatured: boolean;
     size: Size;
     color: Color;
-    images: Image[];
+    images: ProductImage[];
 }
 
-export interface Image {
+export interface ProductImage {
     id: string;
     url: string;
 }
