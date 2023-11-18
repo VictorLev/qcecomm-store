@@ -6,9 +6,19 @@ import NavBarActions from "./navbar-actions";
 import Image from 'next/image';
 import Flag from "@/images/Flag_of_Quebec.svg";
 
+import {useTranslations} from 'next-intl';
+ 
+interface NavbarContentProps {
+    categories: any
+}
 
 const Navbar = async () => {
     const categories = await getCategories();
+    return <NavbarContent categories={categories} />;
+}
+
+const NavbarContent: React.FC<NavbarContentProps> = ({categories}) => {
+    const t = useTranslations('Index');
     return ( 
         <div className="mx-auto border-b bg-blue-800">
             <Container>
@@ -22,7 +32,7 @@ const Navbar = async () => {
                     />
                     <Link href="/" className="ml-4 gap-x-2 ">
                         <p className="font-bold text-white  text-xl">
-                            <span className="lg-view">Quebec Store Down Under</span>
+                            <span className="lg-view">{t('title')}</span>
                             <span className="sm-view">QSDU</span>
                         </p>
                     </Link>
@@ -33,5 +43,6 @@ const Navbar = async () => {
         </div>
     );
 }
+
  
 export default Navbar;

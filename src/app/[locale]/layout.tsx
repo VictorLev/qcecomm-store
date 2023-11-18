@@ -5,7 +5,10 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
+import {notFound} from 'next/navigation';
 
+
+const locales = ['en', 'fr', 'sp'];
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -13,13 +16,19 @@ export const metadata: Metadata = {
   description: 'Quebec product Store',
 }
 
+
 export default function RootLayout({
   children,
+  params
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
+  params: { locale: string}
 }) {
+
+  if (!locales.includes(params.locale as any)) notFound();
+
   return (
-    <html lang="en">
+    <html lang={params.locale}>
       <body className={montserrat.className}>
         <ModalProvider />
         <ToastProvider />

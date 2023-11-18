@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 import Button from "./ui/button";
 import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-carts";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/src/navigation";
 
 
 const NavBarActions = () => {
@@ -20,8 +20,6 @@ const NavBarActions = () => {
     if(!isMounted) {
         return null
     }
-
-
 
     return ( 
         <div className="ml-auto  flex items-center gap-x-4">
