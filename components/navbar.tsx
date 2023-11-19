@@ -33,7 +33,6 @@ const NavbarContent: React.FC<NavbarContentProps> = ({categories}) => {
                     <Link href="/" className="ml-4 gap-x-2 ">
                         <p className="font-bold text-white  text-xl">
                             <span className="lg-view">{t('title')}</span>
-                            <span className="sm-view">QSDU</span>
                         </p>
                     </Link>
                     <MainNav data={categories} />
