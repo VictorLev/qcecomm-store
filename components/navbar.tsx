@@ -7,9 +7,10 @@ import Image from 'next/image';
 import Flag from "@/images/Flag_of_Quebec.svg";
 
 import {useTranslations} from 'next-intl';
+import { Category } from "@/type";
  
 interface NavbarContentProps {
-    categories: any
+    categories: Category[]
 }
 
 const Navbar = async () => {
