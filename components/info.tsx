@@ -4,6 +4,7 @@ import { Product } from "@/type";
 import Currency from "./ui/currency";
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 
 
@@ -15,6 +16,7 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = ({
     data
 }) => {
+    const t = useTranslations('Index');
     return ( 
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -38,7 +40,7 @@ const Info: React.FC<InfoProps> = ({
             </div>
             <div className="mt-10 flex items-center gap-x-3">
                 <Button className="flex item gap-x-2 bg-blue-800 text-white">
-                    Add to Cart
+                    {t("Add to Cart")}
                     <ShoppingCart />
                 </Button>
             </div>
