@@ -1,24 +1,28 @@
 "use client"
 
 import { cn } from "@/lib/utils";
+
 import { Category } from "@/type";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+
 export const revalidate = 0;
 
 interface MainNavProps {
-    data: Category[];
+    data: Category[],
+    params: { locale: string}
 }
 
 const MainNav: React.FC<MainNavProps> = ({
     data
 }) => {
-    const pathname = usePathname();
 
+    const pathname = usePathname();
     const routes = data.map((route) => ({
+
         href:`/category/${route.id}`,
-        label: route.name,
+        label: route.nameEn,
         active: pathname === `/category/${route.id}`
     }))
 

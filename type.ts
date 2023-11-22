@@ -11,7 +11,9 @@ export interface BillboardImage {
 
 export interface Category {
     id: string;
-    name: string;
+    nameEn: string;
+    nameFr: string;
+    nameSp: string;
     billboard: Billboard;
 }
 
