@@ -1,10 +1,10 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { usePathname } from "@/src/navigation";
+import { Link, usePathname } from "@/src/navigation";
 
 import { Category } from "@/type";
-import Link from "next/link";
+
 
 
 export const revalidate = 0;
@@ -18,11 +18,12 @@ const MainNav: React.FC<MainNavProps> = ({
 }) => {
     const pathname = usePathname();
     const routes = data.map((route) => ({
-        href:`en/category/${route.id}`,
+        href:`/category/${route.id}`,
         label: route.nameEn,
         active: pathname === `/category/${route.id}`
     }))
-    
+
+    console.log(routes)
     return ( 
         <nav
             className="mx-6 flex items-center space-x-4 lg:space-x-6"
