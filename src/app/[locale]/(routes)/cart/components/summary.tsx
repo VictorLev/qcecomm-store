@@ -8,8 +8,10 @@ import { toast } from "react-hot-toast"
 import Button from "@/components/ui/button"
 import Currency from "@/components/ui/currency"
 import useCart from "@/hooks/use-carts" 
+import { useTranslations } from "next-intl"
 
 const Summary = () => {
+    const t = useTranslations('CartPage')
     const searchParams = useSearchParams()
     const items = useCart((state) => state.items)
     const removeAll = useCart((state) => state.removeAll)
@@ -51,18 +53,18 @@ const Summary = () => {
         "
     >
         <h2 className="text-lg font-medium text-gray-900">
-            Order Summary
+            {t('Order Summary')}
         </h2>
         <div className="mt-6 space-y-4">
             <div className="flex items-center justify-between border-t border-gray-200 pt-4">
                 <div className="text-base font-medium text-gray-900">
-                    Order Total
+                {t('Order Total')}
                 </div>
                 <Currency value={totalPrice} />
             </div>
         </div>
         <Button onClick={onCheckout} className="w-full mt-6 bg-blue-800 text-white">
-            Checkout
+            {t('Checkout')}
         </Button>
     </div>
     )

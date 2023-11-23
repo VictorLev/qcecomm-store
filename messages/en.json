@@ -2,7 +2,17 @@
     "Index": {
       "title": "QUEBEC STORE",
       "rights reserved" : "All rights reserved.",
-      "featured products" : "Featured Products",
-      "Add to Cart" : "Add to Cart"
+      "featured products" : "Featured Products"
+      
+    },
+
+    "CartPage":{
+      "Add to Cart" : "Add to Cart",
+      "Shopping Cart" : "Shopping Cart",
+      "Order Summary" : "Order Summary",
+      "Order Total" : "Order Total",
+      "No Items added to cart" : "No Items added to cart",
+      "Checkout" : "Checkout"
     }
+
   }

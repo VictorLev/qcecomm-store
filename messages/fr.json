@@ -2,7 +2,14 @@
     "Index": {
       "title": "BOUTIQUE QUEBEC",
       "rights reserved" : "Tous droits réservés.",
-      "featured products" : "Produits en vedette",
-      "Add to Cart" : "Ajouter au Panier"
+      "featured products" : "Produits en vedette"
+    },
+    "CartPage":{
+      "Add to Cart" : "Ajouter au Panier",
+      "Shopping Cart" : "Panier",
+      "Order Summary" : "Sommaire de la commande",
+      "Order Total" : "Solde Total",
+      "No Items added to cart" : "Aucun article ajouté au panier",
+      "Checkout" : "Checkout"
     }
   }

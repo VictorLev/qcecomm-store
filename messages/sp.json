@@ -2,7 +2,14 @@
     "Index": {
       "title": "COMERCIO QUEBEC",
       "rights reserved" : "Todos los derechos reservados.",
-      "featured products" : "Productos Destacados",
-      "Add to Cart" : "Añadir a la cesta"
+      "featured products" : "Productos Destacados"
+    },
+    "CartPage":{
+      "Add to Cart" : "Añadir a la cesta",
+      "Shopping Cart" : "Carro",
+      "Order Summary" : "Resumen del pedido",
+      "Order Total" : "Total del pedido",
+      "No Items added to cart" : "No se agregaron artículos al carrito",
+      "Checkout" : "Checkout"
     }
   }

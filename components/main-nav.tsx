@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { Link, usePathname } from "@/src/navigation";
 
 import { Category } from "@/type";
+import { useLocale } from "next-intl";
 
 
 
@@ -17,13 +18,16 @@ const MainNav: React.FC<MainNavProps> = ({
     data
 }) => {
     const pathname = usePathname();
-    const routes = data.map((route) => ({
+
+    const locale = useLocale(); 
+    const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
+    const routes = data.map((route) => (
+        {
         href:`/category/${route.id}`,
-        label: route.nameEn,
+        label: route[name as keyof Category].toString(),
         active: pathname === `/category/${route.id}`
     }))
 
-    console.log(routes)
     return ( 
         <nav
             className="mx-6 flex items-center space-x-4 lg:space-x-6"

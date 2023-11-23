@@ -6,6 +6,7 @@ import Navbar from '@/components/navbar'
 import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
 import {notFound} from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl'
 
 
 const locales = ['en', 'fr', 'sp'];
@@ -16,8 +17,7 @@ export const metadata: Metadata = {
   description: 'Quebec product Store',
 }
 
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params
 }: {
@@ -26,6 +26,13 @@ export default function RootLayout({
 }) {
 
   if (!locales.includes(params.locale as any)) notFound();
+  
+  let messages;
+  try {
+    messages = (await import(`@/messages/${params.locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
 
   return (
     <html lang={params.locale}>
@@ -33,7 +40,9 @@ export default function RootLayout({
         <ModalProvider />
         <ToastProvider />
         <Navbar />
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
         <Footer />
       </body>
     </html>
