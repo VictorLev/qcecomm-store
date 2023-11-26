@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import useCart from "@/hooks/use-carts";
 import { Link, usePathname, useRouter } from "@/src/navigation";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { useLocale } from "next-intl";
 
 
 const NavBarActions = () => {
@@ -14,6 +15,7 @@ const NavBarActions = () => {
 
     const router = useRouter()
     const pathname = usePathname();
+    const locale = useLocale();
     useEffect(() => {
         setIsMounted(true);
     }, []);
@@ -22,6 +24,15 @@ const NavBarActions = () => {
 
     if(!isMounted) {
         return null
+    }
+    var flag;
+    switch(locale) {
+        case 'en': flag = <GB className="mr-2 h-4 w-4"/>
+            break;
+        case 'fr': flag = <FR className="mr-2 h-4 w-4"/>
+            break;
+        case 'sp': flag = <ES className="mr-2 h-4 w-4"/>
+            break;
     }
 
     return ( 
@@ -37,8 +48,9 @@ const NavBarActions = () => {
             </Button>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button className="h-8 w-8 p-0">
+                    <Button className="flex items-center h-8 w-14 p-0">
                         <Globe className="h-4 w-8"/>
+                        {flag}
                     </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
