@@ -10,6 +10,7 @@
       "Order Summary" : "Resumen del pedido",
       "Order Total" : "Total del pedido",
       "No Items added to cart" : "No se agregaron artículos al carrito",
-      "Checkout" : "Checkout"
+      "Checkout" : "Comprar",
+      "description" : "descripción"
     }
   }

@@ -1,6 +1,6 @@
 "use client"
 
-import { Product } from "@/type";
+import { Category, Product } from "@/type";
 import Image from "next/image";
 import IconButton from "./icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
@@ -9,6 +9,7 @@ import { useRouter } from "@/src/navigation";
 import { MouseEventHandler } from "react";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-carts";
+import { useLocale } from "next-intl";
 
 interface ProductCard {
     data: Product;
@@ -20,6 +21,8 @@ const ProductCard: React.FC<ProductCard> = ({
     const cart = useCart()
     const previewModal = usePreviewModal()
     const router = useRouter()
+    const locale = useLocale(); 
+    const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
 
     const handleClick = () => {
         router.push(`/product/${data?.id}`)
@@ -62,10 +65,10 @@ const ProductCard: React.FC<ProductCard> = ({
             {/* Dresciption */}
             <div>
                 <p className="font-semibold text-lg">
-                    {data.name}
+                    {data[name as keyof Product].toString()}
                 </p>
                 <p className="text-sm text-gray-500">
-                    {data.category?.name}
+                    {data.category[name as keyof Category].toString()}
                 </p>
             </div>
             {/* Price */}

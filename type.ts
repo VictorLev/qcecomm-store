@@ -20,7 +20,12 @@ export interface Category {
 export interface Product {
     id: string;
     category: Category;
-    name: string;
+    nameEn: string;
+    nameFr: string;
+    nameSp: string;
+    descriptionEn: string;
+    descriptionFr: string;
+    descriptionSp: string;
     price: string;
     isFreatured: boolean;
     size: Size;

@@ -12,7 +12,7 @@ interface HomePageContentProps {
 }
 
 const HomePage = async () => {
-    const products = await getProducts({ isFeatured: true})
+    const products = await getProducts({isFeatured: true})
     const billboard = await getBillboard("aaeb2c7e-fcdd-43c6-acd4-bf3014f68b6f");
     return <HomePageContent products={products} billboard={billboard} />;
 }

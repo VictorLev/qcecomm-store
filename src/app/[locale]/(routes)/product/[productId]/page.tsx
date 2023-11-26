@@ -4,6 +4,8 @@ import Gallery from "@/components/gallery";
 import Info from "@/components/info";
 import ProductList from "@/components/product-list";
 import Container from "@/components/ui/container";
+import { Category } from "@/type";
+import { useLocale } from "next-intl";
 
 
 interface ProductPageProps {
@@ -19,6 +21,8 @@ const ProductPage: React.FC<ProductPageProps> = async ({
     const suggestedProducts = await getProducts({
         categoryId: product?.category?.id
     })
+    const locale = useLocale(); 
+    const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
     return ( 
     <div className="bg-white ">
         <Container>
@@ -31,7 +35,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
                 </div>
 
                 <hr className="my-10"/>
-                <ProductList title={product?.category?.name.concat(" related items ")} items={suggestedProducts}/>
+                <ProductList title={product?.category[name as keyof Category].toString().concat(" related items ")} items={suggestedProducts}/>
             </div>
         </Container>
     </div> );

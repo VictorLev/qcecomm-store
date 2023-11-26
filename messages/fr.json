@@ -10,6 +10,7 @@
       "Order Summary" : "Sommaire de la commande",
       "Order Total" : "Solde Total",
       "No Items added to cart" : "Aucun article ajouté au panier",
-      "Checkout" : "Checkout"
+      "Checkout" : "Payer",
+      "description" : "description"
     }
   }

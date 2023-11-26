@@ -12,7 +12,8 @@
       "Order Summary" : "Order Summary",
       "Order Total" : "Order Total",
       "No Items added to cart" : "No Items added to cart",
-      "Checkout" : "Checkout"
+      "Checkout" : "Checkout",
+      "description" : "Description"
     }
 
   }
