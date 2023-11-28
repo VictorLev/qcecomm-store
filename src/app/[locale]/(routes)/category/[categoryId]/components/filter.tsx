@@ -10,13 +10,15 @@ import qs from "query-string";
 interface FilterProps {
     data: (Size | Color)[];
     name: string;
-    valueKey: string
+    valueKey: string;
+    enabled: boolean
 }
 
 const Filter: React.FC<FilterProps> = ({
     data,
     name,
-    valueKey
+    valueKey,
+    enabled
 }) => {
     const searchParams = useSearchParams()
     const router = useRouter()
@@ -25,7 +27,7 @@ const Filter: React.FC<FilterProps> = ({
 
     const onClick = (id: string) => {
         const current = qs.parse(searchParams.toString())
-    
+        
         const query = {
             ...current,
             [valueKey]: id
@@ -42,7 +44,7 @@ const Filter: React.FC<FilterProps> = ({
 
         router.push(url)
     }
-
+    if (enabled) {
     return ( 
         <div className="mb-8">
             <h3 className="text-lg font-semibold">
@@ -65,7 +67,8 @@ const Filter: React.FC<FilterProps> = ({
                 ))}
             </div>
         </div>
-     );
+     );}
+     else return 
 }
  
 export default Filter;

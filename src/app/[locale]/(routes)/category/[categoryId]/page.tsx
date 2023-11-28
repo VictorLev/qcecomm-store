@@ -8,6 +8,8 @@ import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
+import { useTranslations } from "next-intl";
+import { Billboard as BillboardType, Category, Color, Product, Size } from "@/type";
 
 export const revalidate = 0;
 
@@ -21,29 +23,60 @@ interface CategoryPageProps {
     }
 }
 
+interface CategoryPageContentProps {
+    products: Product[],
+    enSize: boolean,
+    enColor: boolean,
+    sizes: Size[],
+    colors: Color[],
+    billboard: BillboardType 
+
+}
+
 const CategoryPage: React.FC<CategoryPageProps> =  async ({
     params,
     searchParams
 }) => {
-    console.log(searchParams.sizeId)
     const products = await getProducts({
         categoryId: params.categoryId,
         colorId: searchParams.colorId,
         sizeId: searchParams.sizeId
     })
     
-    const enableColorFilter = products.map(x => x.color);
-    console.log(enableColorFilter)
+    const enSize = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
+    const enColor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
+
 
     const sizes = await getSizes();
     const colors = await getColors();
     const category = await getCategory(params.categoryId);
 
+    return <CategoryPageContent 
+                products={products} 
+                enSize={enSize}
+                enColor={enColor}
+                sizes={sizes}
+                colors={colors}
+                billboard={category.billboard}
+            />
+}
+
+const CategoryPageContent: React.FC<CategoryPageContentProps> = (
+    {
+        products,
+        sizes,
+        colors,
+        enSize,
+        enColor,
+        billboard
+    }) => {
+
+    const t = useTranslations('Filter');
     return ( 
         <div className="bg-white">
             <Container>
                 <Billboard
-                    data={category.billboard}
+                    data={billboard}
                 />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
@@ -52,13 +85,15 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
                         <div className="hidden lg:block">
                             <Filter 
                                 valueKey="sizeId"
-                                name="Size"
+                                name={t('Size')}
                                 data={sizes}
+                                enabled={enSize}
                             />
                             <Filter 
                                 valueKey="colorId"
-                                name="Colors"
+                                name={t('Color')}
                                 data={colors}
+                                enabled={enColor}
                             />
                         </div>
                         <div className="mt-6 lg:col-span-4 lg:mt-0">
@@ -75,5 +110,6 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
         </div>
      );
 }
- 
+
+
 export default CategoryPage;

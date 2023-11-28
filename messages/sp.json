@@ -12,5 +12,9 @@
       "No Items added to cart" : "No se agregaron artículos al carrito",
       "Checkout" : "Comprar",
       "description" : "descripción"
+    },
+    "Filter":{
+      "Color" : "Color",
+      "Size" : "Talla"
     }
   }
