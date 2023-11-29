@@ -7,6 +7,10 @@ interface Query {
     categoryId?: string;
     colorId?: string;
     sizeId?: string;
+    typeId?: string;
+    provinceId?: string;
+    cdayId?: string;
+    sportsteamId?: string;
     isFeatured?: boolean;
 }
 
@@ -16,6 +20,10 @@ const getProducts = async (query: Query): Promise<Product[]> => {
         query: {
             colorId: query.colorId,
             sizeId: query.sizeId,
+            typeId: query.typeId,
+            provinceId: query.provinceId,
+            cdayId: query.cdayId,
+            sportsteamId: query.sportsteamId,
             categoryId: query.categoryId,
             isFeatured: query.isFeatured
         }

@@ -1,7 +1,6 @@
 {
     "Index": {
       "title": "COMERCIO QUEBEC",
-      "rights reserved" : "Todos los derechos reservados.",
       "featured products" : "Productos Destacados"
     },
     "CartPage":{
@@ -15,6 +14,23 @@
     },
     "Filter":{
       "Color" : "Color",
-      "Size" : "Talla"
-    }
+      "Size" : "Talla",
+      "Province": "Provincias",
+      "Celebration": "Celebración",
+      "Type": "Tipo",
+      "Sportsteam": "Equipo deportivo"
+    },
+    
+    "Footer":{
+      "rights reserved" : "Todos los derechos reservados."
+      
+    },
+    "Acerca de":"Acerca de mí",
+      "intro":"¡Hola! 👋 Soy Víctor, la mente apasionada detrás de este rincón digital. Bienvenido a mi proyecto de comercio electrónico, donde los píxeles cumplen el propósito y la creatividad baila con el código.",
+      "hJourney":"El viaje",
+      "Journey":"Mi viaje al mundo del desarrollo de software comenzó con una curiosidad y una fascinación por el desarrollo web. Desde jugar con líneas de código hasta aprender los marcos más nuevos, desarrollé este proyecto en mi tiempo libre.",
+      "hVision":"La Visión",
+      "Vision":"En el panorama en constante evolución del comercio electrónico, imaginé un espacio que no solo muestre productos excepcionales sino que también refleje la perfecta fusión de estética y funcionalidad. Este sitio web no es solo una tienda digital; es un homenaje a mi cultura y un testimonio de las infinitas posibilidades que unas pocas líneas de código pueden desbloquear.",
+      "hConnect":"Conectémonos",
+      "Connect":"Este viaje no se trata solo de mí; se trata de conectarnos: crear una comunidad que celebre la intersección de la tecnología y la creatividad. Comuníquese con nosotros si tiene alguna pregunta sobre este proyecto.\n¡Gracias por estar aquí! \nSalud,\nVíctor"
   }

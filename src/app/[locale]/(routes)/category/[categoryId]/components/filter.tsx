@@ -2,13 +2,13 @@
 
 import Button from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Color, Size } from "@/type";
+import { Cday, Color, Province, Size, Sportsteam, Type } from "@/type";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import qs from "query-string";
 
 interface FilterProps {
-    data: (Size | Color)[];
+    data: (Size | Color | Province | Type | Cday | Sportsteam)[];
     name: string;
     valueKey: string;
     enabled: boolean

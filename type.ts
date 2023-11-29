@@ -49,3 +49,27 @@ export interface Color {
     name: string;
     value: string;
 }
+
+export interface Province {
+    id: string;
+    name: string;
+    value: string;
+}
+
+export interface Cday {
+    id: string;
+    name: string;
+    value: string;
+}
+
+export interface Sportsteam {
+    id: string;
+    name: string;
+    value: string;
+}
+
+export interface Type {
+    id: string;
+    name: string;
+    value: string;
+}

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link, usePathname } from "@/src/navigation";
 import Container from "./ui/container";
 import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";

@@ -1,7 +1,6 @@
 {
     "Index": {
       "title": "BOUTIQUE QUEBEC",
-      "rights reserved" : "Tous droits réservés.",
       "featured products" : "Produits en vedette"
     },
     "CartPage":{
@@ -15,6 +14,22 @@
     },
     "Filter":{
       "Color" : "Couleur",
-      "Size" : "Taille"
-    }
+      "Size" : "Taille",
+      "Province" : "Province",
+      "Celebration" : "Célébration",
+      "Type" : "Type",
+      "Sportsteam" : "Equipe Sportive"
+    },
+    "Footer":{
+      "rights reserved" : "Tous droits réservés."
+    },
+    "About":{
+      "About": "À propos de moi",
+      "intro": "Bonjour ! 👋 Je m'appelle Victor, l'esprit passionné derrière ce coin numérique. Bienvenue dans mon projet de commerce électronique, où les pixels rencontrent l'utilité et où la créativité danse avec le code.",
+      "hJourney": "Le parcours",
+      "Journey": "Mon parcours dans le monde du développement logiciel a commencé avec une curiosité et une fascination pour le développement Web. Du bricolage avec des lignes de code à l'apprentissage des frameworks les plus récents, j'ai développé ce projet pendant mon temps libre.",
+      "hVision": "La Vision",
+      "Vision": "Dans le paysage en constante évolution du commerce électronique, j'ai imaginé un espace qui non seulement présente des produits exceptionnels, mais reflète également la fusion harmonieuse de l'esthétique et de la fonctionnalité. Ce site Web n'est pas seulement une vitrine numérique ; c'est un hommage à ma culture et un témoignage des possibilités infinies que quelques lignes de code peuvent ouvrir.",
+      "hConnect": "Connectons-nous",
+      "Connect": "Ce voyage ne concerne pas seulement moi ; il s'agit également de créer une communauté qui célèbre l'intersection de la technologie et de la créativité. N'hésitez pas à nous contacter si vous avez des questions sur ce projet.\nMerci d'être ici !\nSalutation,\nVictor"}
   }

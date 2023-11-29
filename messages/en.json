@@ -1,7 +1,6 @@
 {
     "Index": {
       "title": "QUEBEC STORE",
-      "rights reserved" : "All rights reserved.",
       "featured products" : "Featured Products"
       
     },
@@ -17,7 +16,25 @@
     },
     "Filter":{
       "Color" : "Color",
-      "Size" : "Size"
+      "Size" : "Size",
+      "Province" : "Provinces",
+      "Celebration" : "Celebration",
+      "Type" : " Type",
+      "Sportsteam" : "Sportsteam"
+    },
+    "Footer":{
+      "rights reserved" : "All rights reserved."
+    }
+    ,
+    "About":{
+      "About":"About Me",
+      "intro":"Hello there! 👋 I'm Victor, the passionate mind behind this digital corner. Welcome to my e-commerce project, where pixels meet the purpose and creativity dances with code.",
+      "hJourney":"The Journey",
+      "Journey":"My journey into the software development world started with a curiosity and a fascination for web development. From tinkering with lines of code to learning the newest frameworks, I developed this project in my spare time.",
+      "hVision":"The Vision",
+      "Vision":"In the ever-evolving landscape of e-commerce, I envisioned a space that not only showcases exceptional products but also reflects the seamless fusion of aesthetics and functionality. This website is not just a digital storefront; it's an homage to my culture and a testament to the endless possibilities that a few lines of code can unlock.",
+      "hConnect":"Let's Connect",
+      "Connect":"This journey is not just about me; it's about connecting—creating a community that celebrates the intersection of technology and creativity. Reach out if you have any questions on the part of this project.\nThank you for being here!\nCheers,\nVictor"
     }
 
   }
