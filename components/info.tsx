@@ -23,14 +23,14 @@ const Info: React.FC<InfoProps> = ({
     const t = useTranslations('CartPage');
 
     const properties = [
-        data.province,
-        data.sportsteam,
-        data.type,
-        data.size,
-        data.cday
-    ].filter((x) => x.name!='N/A')
+        {data:data.province,name:'Province'},
+        {data:data.sportsteam,name:'Sportsteam'},
+        {data:data.type,name:'Type'},
+        {data:data.size,name:'Size'},
+        {data:data.cday,name:'Cday'}
+    ].filter((x) => x.data.name!='N/A')
 
-    const propColor = data.color ?? false
+    const propColor = data.color.name != 'N/A' ?? false
 
 
     return ( 
@@ -43,10 +43,11 @@ const Info: React.FC<InfoProps> = ({
             </div>
             <hr className="my-4"/>
             <div className="flex flex-col gap-y-6">
-                {properties.map( (property) => 
+                {properties.map( ({name, data}) => 
                     ( <div className="flex items-center gap-x-4">
-                        <h3 className="font-semibold text-black">{t(typeof property)}:</h3>
-                            {property[value as keyof typeof property]}
+
+                        <h3 className="font-semibold text-black">{t(name)}:</h3>
+                            {data[value as keyof typeof data]}
                     </div> )
                 )}
                 { propColor ? 

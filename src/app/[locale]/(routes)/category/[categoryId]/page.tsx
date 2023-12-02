@@ -65,11 +65,11 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
     
     const enSize = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
     const enColor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
-    
-    const enProv = products.map(x => x.province).filter((x) => x.name!='N/A').length !== 0;
-    const enType = products.map(x => x.type).filter((x) => x.name!='N/A').length !== 0;
-    const enCday = products.map(x => x.cday).filter((x) => x.name!='N/A').length !== 0;
-    const enSpor = products.map(x => x.sportsteam).filter((x) => x.name!='N/A').length !== 0;
+    console.log(products.map(x => x.province))
+    const enProv = products.map(x => x.province).filter((x) => x.name!=='N/A').length !== 0;
+    const enType = products.map(x => x.type).filter((x) => x.name!=='N/A').length !== 0;
+    const enCday = products.map(x => x.cday).filter((x) => x.name!=='N/A').length !== 0;
+    const enSpor = products.map(x => x.sportsteam).filter((x) => x.name!=='N/A').length !== 0;
 
 
     const sizes = await getSizes();
@@ -153,7 +153,7 @@ const CategoryPageContent: React.FC<CategoryPageContentProps> = (
                             />
                             <Filter 
                                 valueKey="cdayId"
-                                name={t('Celebration')}
+                                name={t('Cday')}
                                 data={cdays}
                                 enabled={enCday}
                             />
