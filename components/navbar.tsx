@@ -15,6 +15,7 @@ interface NavbarContentProps {
 
 const Navbar = async () => {
     const categories = await getCategories();
+    console.log(categories)
     return <NavbarContent categories={categories} />;
 }
 

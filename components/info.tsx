@@ -22,6 +22,15 @@ const Info: React.FC<InfoProps> = ({
     const description = 'description'.concat(locale.charAt(0).toUpperCase()+locale[1]);
     const t = useTranslations('CartPage');
 
+    const properties = [
+        data.province,
+        data.sportsteam,
+        data.type,
+        data.size,
+        data.cday
+    ].filter((x) => x.name!='N/A')
+
+    const propColor = data.color ?? false
 
 
     return ( 
@@ -34,16 +43,19 @@ const Info: React.FC<InfoProps> = ({
             </div>
             <hr className="my-4"/>
             <div className="flex flex-col gap-y-6">
-                <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">{t('Size')}:</h3>
-                    <div>
-                        {data?.size[]}
+                {properties.map( (property) => 
+                    ( <div className="flex items-center gap-x-4">
+                        <h3 className="font-semibold text-black">{t(typeof property)}:</h3>
+                            {property[value as keyof typeof property]}
+                    </div> )
+                )}
+                { propColor ? 
+                    <div className="flex items-center gap-x-4">
+                        <h3 className="font-semibold text-black">{t('Color')}:</h3>
+                            <div className="h-6 w-6 rounded-full border border-gray-600" style={{backgroundColor: data?.color?.value}} />
                     </div>
-                </div>
-                <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">{t('Color')}:</h3>
-                    <div className="h-6 w-6 rounded-full border border-gray-600" style={{backgroundColor: data?.color?.value}} />
-                </div>
+                    : <></>
+                }
             </div>
             <div className="mt-10 flex items-center gap-x-3">
                 <Button className="flex item gap-x-2 bg-blue-800 text-white">
