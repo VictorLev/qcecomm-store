@@ -7,13 +7,13 @@ import Container from "@/components/ui/container";
 import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
-import MobileFilters from "./components/mobile-filters";
 import { useTranslations } from "next-intl";
 import { Billboard as BillboardType, Category, Cday, Color, Product, Province, Size, Sportsteam, Type } from "@/type";
 import getProvinces from "@/actions/get-provinces";
 import getTypes from "@/actions/get-types";
 import getCdays from "@/actions/get-cdays";
 import getSportsteams from "@/actions/get-sportsteams";
+import FilterColor from "./components/filterColor";
 
 export const revalidate = 0;
 
@@ -66,10 +66,10 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
     const enSize = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
     const enColor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
     
-    const enProv = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
-    const enType = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
-    const enCday = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
-    const enSpor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
+    const enProv = products.map(x => x.province).filter((x) => x.name!='N/A').length !== 0;
+    const enType = products.map(x => x.type).filter((x) => x.name!='N/A').length !== 0;
+    const enCday = products.map(x => x.cday).filter((x) => x.name!='N/A').length !== 0;
+    const enSpor = products.map(x => x.sportsteam).filter((x) => x.name!='N/A').length !== 0;
 
 
     const sizes = await getSizes();
@@ -125,9 +125,7 @@ const CategoryPageContent: React.FC<CategoryPageContentProps> = (
                     data={billboard}
                 />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-                        <MobileFilters sizes={sizes} colors={colors} />
-                        
+                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">                        
                         <div className="hidden lg:block">
                             <Filter 
                                 valueKey="sizeId"
@@ -135,7 +133,7 @@ const CategoryPageContent: React.FC<CategoryPageContentProps> = (
                                 data={sizes}
                                 enabled={enSize}
                             />
-                            <Filter 
+                            <FilterColor 
                                 valueKey="colorId"
                                 name={t('Color')}
                                 data={colors}

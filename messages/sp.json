@@ -10,7 +10,13 @@
       "Order Total" : "Total del pedido",
       "No Items added to cart" : "No se agregaron artículos al carrito",
       "Checkout" : "Comprar",
-      "description" : "descripción"
+      "description" : "descripción",
+      "Color" : "Color",
+      "Size" : "Talla",
+      "Province": "Provincias",
+      "Celebration": "Celebración",
+      "Type": "Tipo",
+      "Sportsteam": "Equipo deportivo"
     },
     "Filter":{
       "Color" : "Color",

@@ -2,20 +2,19 @@
 
 import Button from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Cday, Color, Province, Size, Sportsteam, Type } from "@/type";
-import { useLocale } from "next-intl";
+import { Color } from "@/type";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import qs from "query-string";
 
-interface FilterProps {
-    data: (Size | Province | Type | Cday | Sportsteam)[];
+interface FilterColorProps {
+    data: Color[];
     name: string;
     valueKey: string;
     enabled: boolean;
 }
 
-const Filter: React.FC<FilterProps> = ({
+const FilterColor: React.FC<FilterColorProps> = ({
     data,
     name,
     valueKey,
@@ -25,9 +24,6 @@ const Filter: React.FC<FilterProps> = ({
     const router = useRouter()
 
     const selectedValue = searchParams.get(valueKey)
-    const locale = useLocale(); 
-
-    var valueDis = 'value'.concat(locale.charAt(0).toUpperCase()+locale[1]) ;
 
     const onClick = (id: string) => {
         const current = qs.parse(searchParams.toString())
@@ -59,12 +55,13 @@ const Filter: React.FC<FilterProps> = ({
                         <div key={filter.id} className="flex items-center">
                             <Button
                                 className={cn(
+                                    
                                     "rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300",
                                     selectedValue === filter.id && "bg-blue-950 text-white"
                                 )} 
                                 onClick={() => onClick(filter.id)}
                             >
-                                {filter[valueDis as keyof typeof filter]}
+                                <div className="h-6 w-6 rounded-full border border-gray-600" style={{backgroundColor: filter?.value}} />
                             </Button>
                         </div>
                     ))}
@@ -75,4 +72,4 @@ const Filter: React.FC<FilterProps> = ({
      else return 
 }
  
-export default Filter;
+export default FilterColor;

@@ -30,6 +30,10 @@ export interface Product {
     isFreatured: boolean;
     size: Size;
     color: Color;
+    province: Province;
+    cday: Cday;
+    type: Type;
+    sportsteam: Sportsteam;
     images: ProductImage[];
 }
 
@@ -41,35 +45,45 @@ export interface ProductImage {
 export interface Size {
     id: string;
     name: string;
-    value: string;
+    valueEn: string;
+    valueFr: string;
+    valueSp: string;
 }
 
 export interface Color {
     id: string;
     name: string;
-    value: string;
+    value: string;    
 }
 
 export interface Province {
     id: string;
     name: string;
-    value: string;
+    valueEn: string;
+    valueFr: string;
+    valueSp: string;
 }
 
 export interface Cday {
     id: string;
     name: string;
-    value: string;
+    valueEn: string;
+    valueFr: string;
+    valueSp: string;
 }
 
 export interface Sportsteam {
     id: string;
     name: string;
-    value: string;
+    valueEn: string;
+    valueFr: string;
+    valueSp: string;
 }
 
 export interface Type {
     id: string;
     name: string;
-    value: string;
+    valueEn: string;
+    valueFr: string;
+    valueSp: string;
 }

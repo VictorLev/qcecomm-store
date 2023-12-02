@@ -18,8 +18,12 @@ const Info: React.FC<InfoProps> = ({
 }) => {
     const locale = useLocale(); 
     const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
+    const value = 'value'.concat(locale.charAt(0).toUpperCase()+locale[1]);
     const description = 'description'.concat(locale.charAt(0).toUpperCase()+locale[1]);
     const t = useTranslations('CartPage');
+
+
+
     return ( 
         <div>
             <h1 className="text-3xl font-bold text-gray-900">{data[name as keyof Product].toString()}</h1>
@@ -31,13 +35,13 @@ const Info: React.FC<InfoProps> = ({
             <hr className="my-4"/>
             <div className="flex flex-col gap-y-6">
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Size:</h3>
+                    <h3 className="font-semibold text-black">{t('Size')}:</h3>
                     <div>
-                        {data?.size?.name}
+                        {data?.size[]}
                     </div>
                 </div>
                 <div className="flex items-center gap-x-4">
-                    <h3 className="font-semibold text-black">Color:</h3>
+                    <h3 className="font-semibold text-black">{t('Color')}:</h3>
                     <div className="h-6 w-6 rounded-full border border-gray-600" style={{backgroundColor: data?.color?.value}} />
                 </div>
             </div>

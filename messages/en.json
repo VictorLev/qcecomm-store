@@ -12,7 +12,13 @@
       "Order Total" : "Order Total",
       "No Items added to cart" : "No Items added to cart",
       "Checkout" : "Checkout",
-      "description" : "Description"
+      "description" : "Description",
+      "Color" : "Color",
+      "Size" : "Size",
+      "Province" : "Provinces",
+      "Celebration" : "Celebration",
+      "Type" : " Type",
+      "Sportsteam" : "Sportsteam"
     },
     "Filter":{
       "Color" : "Color",
