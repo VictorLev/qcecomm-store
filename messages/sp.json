@@ -1,7 +1,8 @@
 {
     "Index": {
       "title": "COMERCIO QUEBEC",
-      "featured products" : "Productos Destacados"
+      "featured products" : "Productos Destacados",
+      "related items" : "artículos relacionados"
     },
     "CartPage":{
       "Add to Cart" : "Añadir a la cesta",
@@ -28,7 +29,10 @@
     },
     
     "Footer":{
-      "rights reserved" : "Todos los derechos reservados."
+      "rights reserved" : "Todos los derechos reservados.",
+      "Contact Info" : "Detalles de contacto",
+      "Useful Links" : "Useful Links",
+      "About The Project" : "Sobre el proyecto"
       
     },
     "Acerca de":"Acerca de mí",

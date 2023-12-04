@@ -1,7 +1,8 @@
 {
     "Index": {
       "title": "BOUTIQUE QUEBEC",
-      "featured products" : "Produits en vedette"
+      "featured products" : "Produits en vedette",
+      "related items" : "connexes"
     },
     "CartPage":{
       "Add to Cart" : "Ajouter au Panier",
@@ -27,7 +28,10 @@
       "Sportsteam" : "Equipe Sportive"
     },
     "Footer":{
-      "rights reserved" : "Tous droits réservés."
+      "rights reserved" : "Tous droits réservés.",
+      "Contact Info" : "Coordonnées",
+      "Useful Links" : "Liens utiles",
+      "About The Project" : "À propos"
     },
     "About":{
       "About": "À propos de moi",

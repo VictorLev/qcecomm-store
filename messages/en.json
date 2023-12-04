@@ -1,7 +1,8 @@
 {
     "Index": {
       "title": "QUEBEC STORE",
-      "featured products" : "Featured Products"
+      "featured products" : "Featured Products",
+      "related items" : "related items "
       
     },
 
@@ -29,7 +30,10 @@
       "Sportsteam" : "Sportsteam"
     },
     "Footer":{
-      "rights reserved" : "All rights reserved."
+      "rights reserved" : "All rights reserved.",
+      "Contact Info" : "Contact Info",
+      "Useful Links" : "Useful Links",
+      "About The Project" : "About The Project"
     }
     ,
     "About":{
