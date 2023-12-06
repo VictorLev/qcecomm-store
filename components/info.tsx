@@ -5,6 +5,7 @@ import Currency from "./ui/currency";
 import Button from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import useCart from "@/hooks/use-carts";
 
 
 
@@ -32,6 +33,11 @@ const Info: React.FC<InfoProps> = ({
 
     const propColor = data.color.name != 'N/A' ?? false
 
+    const cart = useCart()
+
+    const onAddToCart = () => {
+        cart.addItem(data)
+    }
 
     return ( 
         <div>
@@ -59,7 +65,7 @@ const Info: React.FC<InfoProps> = ({
                 }
             </div>
             <div className="mt-10 flex items-center gap-x-3">
-                <Button className="flex item gap-x-2 bg-blue-800 text-white">
+                <Button onClick={onAddToCart} className="flex item gap-x-2 bg-blue-800 text-white">
                     {t("Add to Cart")}
                     <ShoppingCart />
                 </Button>
