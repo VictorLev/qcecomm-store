@@ -20,7 +20,7 @@ Welcome to my Quebec E-Commerce Website! This demo website was made to pratice m
 
 **Admin Dashboard**:  A separate wedsite is made to manage settings, view relavent data and others functionalities.
 
-**Languages: Supports three languages: English, French and Spanish
+**Languages**: Supports three languages: English, French and Spanish
 
 
 ## :rocket:Getting Started
