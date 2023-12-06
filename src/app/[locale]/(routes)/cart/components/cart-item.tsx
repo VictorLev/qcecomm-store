@@ -8,6 +8,7 @@ import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-carts";
 import { Product } from "@/type";
+import { useLocale } from "next-intl";
 
 interface CartItemProps {
     data: Product;
@@ -16,7 +17,8 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = ({
     data
 }) => {
-
+    const locale = useLocale(); 
+    const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
     const cart = useCart()
 
     const onRemove = () => {
@@ -40,7 +42,7 @@ const CartItem: React.FC<CartItemProps> = ({
                 <div className="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                     <div className="flex justify-between">
                         <p className="text-lg font-semibold text-black">
-                            {data.name}
+                            {data[name as keyof Product].toString()}
                         </p>
                     </div>
                     <div className="mt-1 flex text-sm">
