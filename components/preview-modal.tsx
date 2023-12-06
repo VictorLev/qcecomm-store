@@ -10,7 +10,7 @@ import Info from "./info";
 const PreviewModal = () => {
     const previewModal = usePreviewModal()
     const product = usePreviewModal((state) => state.data)
-
+    
 if(!product) {
     return null
 }
@@ -25,7 +25,7 @@ if(!product) {
                     <Gallery images={product.images} />
                 </div>
                 <div className="sm:col-span-8 lg:col-span-7">
-                    <Info data={product}/>
+                        <Info data={product}/>
                 </div>
             </div>
 

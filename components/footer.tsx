@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className="grid grid-cols-2 gap-4 p-4  sm:px-6 lg:px-8">
                     <div className="flex flex-col text-xs text-white space-y-3">
                         <h1 className='font-bold'>
-                        Contact Info
+                        {t('Contact Info')}
                         </h1>
                         <p>
                             levesque.vic@gmail.com
@@ -39,10 +39,10 @@ const Footer = () => {
 
                     <div className='flex flex-col text-xs text-white space-y-3'>
                         <h1 className="font-bold">
-                            Useful Links
+                            {t('Useful Links')}
                         </h1>
                         <Link href="/about">
-                            About The Project
+                            {t('About The Project')}
                         </Link>
 
                     </div>
