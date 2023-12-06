@@ -18,7 +18,10 @@ Welcome to my Quebec E-Commerce Website! This demo website was made to pratice m
 
 **Responsive Design**: The website is designed to work on various devices, including desktops, tablets, and smartphones.
 
-**Admin Dashboard**:  A separate wedsite is made to manage settings, view relavent data and others functinalities.
+**Admin Dashboard**:  A separate wedsite is made to manage settings, view relavent data and others functionalities.
+
+**Languages: Supports three languages: English, French and Spanish
+
 
 ## :rocket:Getting Started
 To get started with the Quebecer E-Commerce Website, follow these steps:
