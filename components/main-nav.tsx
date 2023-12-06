@@ -44,7 +44,7 @@ const MainNav: React.FC<MainNavProps> = ({
                     )}
                 >
                         <span className="lg-view">{route.label}</span>
-                        <span className="sm-view">{route.label.slice(0, 4)}</span>
+                        <span className="sm-view">{route.label.slice(0, 2)}</span>
                 </Link>
             ))}
         </nav>
