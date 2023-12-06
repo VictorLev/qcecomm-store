@@ -44,9 +44,9 @@ const Info: React.FC<InfoProps> = ({
             <hr className="my-4"/>
             <div className="flex flex-col gap-y-6">
                 {properties.map( ({name, data}) => 
-                    ( <div className="flex items-center gap-x-4">
+                    ( <div key={data.id} className="flex items-center gap-x-4">
 
-                        <h3 className="font-semibold text-black">{t(name)}:</h3>
+                        <h3 key={data.id} className="font-semibold text-black">{t(name)}:</h3>
                             {data[value as keyof typeof data]}
                     </div> )
                 )}
