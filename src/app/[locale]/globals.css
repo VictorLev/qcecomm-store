@@ -3,7 +3,27 @@
 @tailwind utilities;
  
 @layer base {
+
+  .lg-view{
+    display:inline-block;
+  }
+  
+  .sm-view{
+    display:none;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .lg-view{
+       display:none;
+    }
+  
+    .sm-view{
+       display:inline-block;
+    }
+  }
+
   :root {
+
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 

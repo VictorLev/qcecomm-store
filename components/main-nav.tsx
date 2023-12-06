@@ -31,7 +31,7 @@ const MainNav: React.FC<MainNavProps> = ({
 
     return ( 
         <nav
-            className="mx-6 flex items-center space-x-4 lg:space-x-6 sm:flex-wrap sm:space-x-1"
+            className="mx-6 flex items-center space-x-4 lg:space-x-6 sm:flex-wrap sm:space-x-2"
         >
 
             {routes.map((route) => (
@@ -39,11 +39,12 @@ const MainNav: React.FC<MainNavProps> = ({
                     key={route.href}
                     href={route.href}
                     className={cn(
-                        "text-sm font-medium transition-colors hover:text-blue-500",
+                        "text-xs font-medium transition-colors hover:text-blue-500 sm:text-sm",
                         route.active ? "text-white" : "text-blue-300"
                     )}
                 >
-                    {route.label}
+                        <span className="lg-view">{route.label}</span>
+                        <span className="sm-view">{route.label.slice(0, 4)}</span>
                 </Link>
             ))}
         </nav>
