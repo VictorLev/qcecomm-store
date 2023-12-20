@@ -27,15 +27,15 @@ const NavBarActions = () => {
     }
     var flag;
     switch(locale) {
-        case 'en': flag = <GB className="mr-2 h-4 w-4"/>
+        case 'en': flag = <GB className="h-4 w-4"/>
             break;
-        case 'fr': flag = <FR className="mr-2 h-4 w-4"/>
+        case 'fr': flag = <FR className="h-4 w-4"/>
             break;
-        case 'sp': flag = <ES className="mr-2 h-4 w-4"/>
+        case 'sp': flag = <ES className="h-4 w-4"/>
             break;
     }
 
-    return ( 
+    return (
         <div className="ml-auto flex items-center gap-x-4">
             <Button onClick={() => router.push('/cart')} className="flex items-center rounded-2xl bg-white px-4 py-2">
                 <ShoppingCart
@@ -48,8 +48,8 @@ const NavBarActions = () => {
             </Button>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button className="flex items-center h-8 w-14 p-0">
-                        <Globe className="h-4 w-8"/>
+                    <Button className="flex justify-center items-center h-8 w-8 sm:w-14 p-0">
+                        <Globe className="hidden p-0 sm:block sm:h-4 sm:w-6"/>
                         {flag}
                     </Button>
                 </DropdownMenuTrigger>
@@ -72,5 +72,5 @@ const NavBarActions = () => {
         </div>
      );
 }
- 
+
 export default NavBarActions;

@@ -3,7 +3,8 @@
       "title": "COMERCIO QUEBEC",
       "stitle": "COM. QC",
       "featured products" : "Productos Destacados",
-      "related items" : "artículos relacionados"
+      "related items" : "artículos relacionados",
+      "billboard" : "Descubra los sabores de Quebec en Australia"
     },
     "CartPage":{
       "Add to Cart" : "Añadir a la cesta",
@@ -28,13 +29,13 @@
       "Type": "Tipo",
       "Sportsteam": "Equipo deportivo"
     },
-    
+
     "Footer":{
       "rights reserved" : "Todos los derechos reservados.",
       "Contact Info" : "Detalles de contacto",
       "Useful Links" : "Useful Links",
       "About The Project" : "Sobre el proyecto"
-      
+
     },
     "Acerca de":"Acerca de mí",
       "intro":"¡Hola! 👋 Soy Víctor, la mente apasionada detrás de este rincón digital. Bienvenido a mi proyecto de comercio electrónico, donde los píxeles cumplen el propósito y la creatividad baila con el código.",

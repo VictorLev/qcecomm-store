@@ -26,13 +26,13 @@ const HomePageContent: React.FC<HomePageContentProps> = ({billboard,products}) =
     return(
       <div className="bg-[#F2F2F2]">
         <HomeBillboard data={billboard} />
-        <Container>
-            <div className="space-y-10 pb-10">
-                <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-                    <ProductList title={t('featured products')} items={products}/>
-                </div>
-            </div>
-        </Container>
+          <Container>
+              <div className="space-y-10 pb-10">
+                  <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+                      <ProductList title={t('featured products')} items={products}/>
+                  </div>
+              </div>
+          </Container>
         </div>
     )
 }
