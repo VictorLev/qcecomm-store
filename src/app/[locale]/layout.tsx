@@ -7,6 +7,7 @@ import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
 import {notFound} from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl'
+import SalesBanner from '@/components/sales-banner'
 
 
 const locales = ['en', 'fr', 'sp'];
@@ -26,7 +27,7 @@ export default async function RootLayout({
 }) {
 
   if (!locales.includes(params.locale as any)) notFound();
-  
+
   let messages;
   try {
     messages = (await import(`@/messages/${params.locale}.json`)).default;
@@ -37,13 +38,14 @@ export default async function RootLayout({
   return (
     <html lang={params.locale}>
       <body className={montserrat.className}>
-        <ModalProvider />
-        <ToastProvider />
+      <ModalProvider />
+      <ToastProvider />
+      <NextIntlClientProvider messages={messages}>
+        <SalesBanner />
         <Navbar />
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
         <Footer />
+      </NextIntlClientProvider>
       </body>
     </html>
   )

@@ -1,7 +1,9 @@
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
+import HomeBillboard from "@/components/home-billboard";
 import Billboard from "@/components/billboard"
 import ProductList from "@/components/product-list";
+import SalesBanner from "@/components/sales-banner";
 import Container from "@/components/ui/container"
 import { Billboard as BillboardType, Product } from "@/type";
 import { useTranslations } from "next-intl";
@@ -20,17 +22,18 @@ const HomePage = async () => {
 const HomePageContent: React.FC<HomePageContentProps> = ({billboard,products}) => {
 
     const t = useTranslations('Index');
-    
+
     return(
+      <div className="bg-[#F2F2F2]">
+        <HomeBillboard data={billboard} />
         <Container>
             <div className="space-y-10 pb-10">
-                <Billboard data={billboard} />
                 <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
                     <ProductList title={t('featured products')} items={products}/>
                 </div>
             </div>
         </Container>
-
+        </div>
     )
 }
 
