@@ -7,6 +7,7 @@ import Container from "@/components/ui/container";
 import { Category } from "@/type";
 import { useLocale, useTranslations } from "next-intl";
 
+export const revalidate = 0;
 
 interface ProductPageProps {
     params: {
@@ -22,10 +23,10 @@ const ProductPage: React.FC<ProductPageProps> = async ({
     const suggestedProducts = await getProducts({
         categoryId: product?.category?.id
     })
-    const locale = useLocale(); 
+    const locale = useLocale();
     const name = 'name'.concat(locale.charAt(0).toUpperCase()+locale[1]);
 
-    return ( 
+    return (
     <div className="bg-white ">
         <Container>
             <div className="px-4 py-10 sm:px-6 lg:px-8">
@@ -42,5 +43,5 @@ const ProductPage: React.FC<ProductPageProps> = async ({
         </Container>
     </div> );
 }
- 
+
 export default ProductPage;

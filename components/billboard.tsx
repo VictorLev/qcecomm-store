@@ -1,11 +1,8 @@
 "use client"
 
 import { Billboard as BillboardType } from "@/type";
-import IconButton from "./ui/icon-button";
-import { MouseEventHandler, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { wrap } from "popmotion";
+import { useState } from "react";
+import { useTransition, animated } from "@react-spring/web";
 
 
 
@@ -17,25 +14,40 @@ const Billboard: React.FC<BillboardProps> = ({
     data
 }) => {
 
+    const [index, set] = useState(1)
+    const transitions = useTransition(index, {
+      key: index,
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+      config: { duration: 1000 },
+      onRest: (_a, _b, item) => {
+        if (index === item) {
+          set(state => (state + 1) % data.images.length)
+        }
+      },
+      exitBeforeEnter: false,
+      delay: 3000
+    })
 
-    const [[page, direction], setPage] = useState([0, 0]);
-    const imageIndex = wrap(0, data?.images.length, page);
-
-    const paginate = (newDirection: number) => {
-        setPage([page + newDirection, newDirection]);
-    };
-
-    setInterval(() => paginate(1),3000)
-
+    console.log(data)
     return (
-        <div className="group cursor-pointer pb-4 rounded-none ">
-          <div
-            className="relative aspect-square md:aspect-[2.4/1] overflow-hidden bg-cover"
-            style={{backgroundImage:`url(${data.images[imageIndex]})`}}
-          >
-          </div>
-        </div>
+      <div className="h-[25rem] mb-8">
 
+            <div className="absolute m-4 shadow-inner shadow-gray-600 w-11/12 h-[25rem] bg-cover bg-center rounded"
+             style={{backgroundImage: `url(${data.images[0].url})`}}>
+            </div>
+            {data.images.length > 1 && transitions((style, i) => (
+              <animated.div
+                className="absolute m-4 rounded shadow-inner shadow-gray-600 w-11/12 h-[25rem] bg-cover bg-center will-change-[opacity]"
+                style={{
+                  ...style,
+                  backgroundImage: `url(${data.images[i].url})`,
+                }}
+              >
+              </animated.div>
+            ))}
+      </div>
      );
 }
 

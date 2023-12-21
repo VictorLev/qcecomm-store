@@ -25,7 +25,7 @@ const NavbarContent: React.FC<NavbarContentProps> = ({categories}) => {
             <Container>
                 <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 justify-center items-center">
                     <Link href="/" className="ml-4 gap-x-2 ">
-                        <p className="font-bold text-white sm:text-sm lg:text-xl ">
+                        <p className="font-bold text-white sm:text-sm lg:text-2xl ">
                             <span className="lg-view">{t('title')}</span>
                             <span className="sm-view">{t('stitle')}</span>
                         </p>

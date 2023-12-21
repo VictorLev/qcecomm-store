@@ -25,7 +25,7 @@ const SalesBanner = () => {
               <div className="px-6 sm:px-6 lg:px-8 flex flex-row gap-x-4 h-16 sm:h-10 justify-center items-center">
 
                 <div className="font-bold">
-                  BIG SALE! 40% OFF on all selected products
+                 🍁 LIQUIDATION SALE! 40% OFF on all maple products 🍁 {/*To Translate*/}
                 </div>
 
                 <Button onClick={() => router.push('/')} className="flex item bg-white	 text-yellow-500

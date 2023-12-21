@@ -14,6 +14,7 @@ import getTypes from "@/actions/get-types";
 import getCdays from "@/actions/get-cdays";
 import getSportsteams from "@/actions/get-sportsteams";
 import FilterColor from "./components/filterColor";
+import HomeBillboard from "@/components/home-billboard";
 
 export const revalidate = 0;
 
@@ -45,7 +46,7 @@ interface CategoryPageContentProps {
     types: Type[],
     cdays: Cday[],
     sportsteams: Sportsteam[],
-    billboard: BillboardType 
+    billboard: BillboardType
 
 }
 
@@ -62,7 +63,8 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
         cdayId: searchParams.cdayId,
         sportsteamId: searchParams.sportsteamId
     })
-    
+    const getFoodProducts = await getProducts({categoryId:"14611642-a1ff-4c2a-9634-9d2e42641efa"})
+    console.log(getFoodProducts)
     const enSize = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
     const enColor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
     const enProv = products.map(x => x.province).filter((x) => x.name!=='N/A').length !== 0;
@@ -79,8 +81,9 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
     const colors = await getColors();
     const category = await getCategory(params.categoryId);
 
-    return <CategoryPageContent 
-                products={products} 
+
+    return <CategoryPageContent
+                products={products}
                 enSize={enSize}
                 enColor={enColor}
                 sizes={sizes}
@@ -117,46 +120,46 @@ const CategoryPageContent: React.FC<CategoryPageContentProps> = (
     }) => {
 
     const t = useTranslations('Filter');
-    return ( 
+    return (
         <div className="bg-white">
             <Container>
                 <Billboard
                     data={billboard}
                 />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
-                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">                        
+                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
                         <div className="hidden lg:block">
-                            <Filter 
+                            <Filter
                                 valueKey="sizeId"
                                 name={t('Size')}
                                 data={sizes}
                                 enabled={enSize}
                             />
-                            <FilterColor 
+                            <FilterColor
                                 valueKey="colorId"
                                 name={t('Color')}
                                 data={colors}
                                 enabled={enColor}
                             />
-                            <Filter 
+                            <Filter
                                 valueKey="provinceId"
                                 name={t('Province')}
                                 data={provinces}
                                 enabled={enProv}
                             />
-                            <Filter 
+                            <Filter
                                 valueKey="typeId"
                                 name={t('Type')}
                                 data={types}
                                 enabled={enType}
                             />
-                            <Filter 
+                            <Filter
                                 valueKey="cdayId"
                                 name={t('Cday')}
                                 data={cdays}
                                 enabled={enCday}
                             />
-                            <Filter 
+                            <Filter
                                 valueKey="sportsteamId"
                                 name={t('Sportsteam')}
                                 data={sportsteams}
