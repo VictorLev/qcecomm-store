@@ -13,15 +13,19 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.0",
     "@fortawesome/free-solid-svg-icons": "^6.5.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@googlemaps/js-api-loader": "^1.16.2",
     "@headlessui/react": "^1.7.17",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@react-google-maps/api": "^2.19.2",
     "@react-spring/web": "^9.7.3",
+    "@types/googlemaps": "^3.43.3",
     "accept-language": "^3.0.18",
     "axios": "^1.6.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "country-flag-icons": "^1.5.7",
     "framer-motion": "^10.16.4",
+    "google-maps-react": "^2.0.6",
     "i18next": "^23.6.0",
     "i18next-resources-to-backend": "^1.1.4",
     "lucide-react": "^0.289.0",
@@ -48,5 +52,13 @@
     "postcss": "^8",
     "tailwindcss": "^3",
     "typescript": "^5"
-  }
+  },
+  "description": "Welcome to my Quebec E-Commerce Website! This demo website was made to pratice my full-stack development skills. It is designed to provide a seamless online shopping experience for customers in Australia offering a wide range of products with a focus on serving the unique needs of Quebecois in the Australian market.",
+  "main": "next.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

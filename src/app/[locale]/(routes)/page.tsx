@@ -9,6 +9,7 @@ import CategoryCards from "@/components/category-cards";
 import getProduct from "@/actions/get-product";
 import mapleBackground from "@/images/maples.jpg"
 import Image from "next/image";
+import Map from "@/components/map";
 
 export const revalidate = 0;
 
@@ -74,6 +75,7 @@ const HomePageContent: React.FC<HomePageContentProps> = ({
 
 
                 </div>
+                <Map/>
               </div>
           </Container>
         </div>
