@@ -4,7 +4,11 @@
       "stitle": "QC STORE",
       "featured products" : "Featured Products",
       "related items" : "related items ",
-      "billboard" : "Bringing the Flavors of Quebec Down Under"
+      "billboard" : "Bringing the Flavors of Quebec Down Under",
+      "sales-banner" : "🍁 LIQUIDATION SALE! 40% OFF on all maple products 🍁",
+      "sales-button" : "Click for All Maple Products",
+      "Shop by Category" : "Shop by Category",
+      "Where to Find Us" : "Where to Find Us"
     },
 
     "CartPage":{

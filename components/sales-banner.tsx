@@ -2,7 +2,7 @@
 
 import  {useTranslations } from 'next-intl';
 import Button from "./ui/button";
-import { useRouter } from 'next/navigation';
+import { Link, useRouter } from "@/src/navigation";
 import Container from './ui/container';
 import IconButton from './ui/icon-button';
 import { X } from 'lucide-react';
@@ -22,16 +22,17 @@ const SalesBanner = () => {
         <div className="z-20 sticky top-0 bottom-0 mx-auto bg-yellow-500">
 
           <Container>
-              <div className="px-6 sm:px-6 lg:px-8 flex flex-row gap-x-4 h-16 sm:h-10 justify-center items-center">
+              <div className="px-6 sm:px-6 lg:px-8 flex flex-row gap-x-4 h-16 lg:h-10 justify-center items-center">
 
                 <div className="font-bold">
-                 🍁 LIQUIDATION SALE! 40% OFF on all maple products 🍁 {/*To Translate*/}
+                  {t("sales-banner")}
                 </div>
 
-                <Button onClick={() => router.push('/')} className="flex item bg-white	 text-yellow-500
+                <Button onClick={() => router.push('/category/14611642-a1ff-4c2a-9634-9d2e42641efa?typeId=80ee52e7-480c-4b08-ad42-eba10e770af7')}
+                className="flex item bg-white	 text-yellow-500
                   rounded-sm
                   p-1">
-                  Click for Details
+                  {t("sales-button")}
                 </Button>
 
                 <div className="absolute z-10 right-1 top-1">

@@ -63,8 +63,6 @@ const CategoryPage: React.FC<CategoryPageProps> =  async ({
         cdayId: searchParams.cdayId,
         sportsteamId: searchParams.sportsteamId
     })
-    const getFoodProducts = await getProducts({categoryId:"14611642-a1ff-4c2a-9634-9d2e42641efa"})
-    console.log(getFoodProducts)
     const enSize = products.map(x => x.size).filter((x) => x.name!='N/A').length !== 0;
     const enColor = products.map(x => x.color).filter((x) => x.name!='N/A').length !== 0;
     const enProv = products.map(x => x.province).filter((x) => x.name!=='N/A').length !== 0;

@@ -8,7 +8,7 @@ import githubIcon from "public/github.svg";
 const Footer = () => {
     const t = useTranslations('Footer');
 
-    return ( 
+    return (
         <footer className="bg-blue-800 border-t">
             <Container>
                 <div className="grid grid-cols-2 gap-4 p-4  sm:px-6 lg:px-8">
@@ -33,9 +33,9 @@ const Footer = () => {
                                 />
                             </Link>
                         </div>
-    
+
                     </div>
-                    
+
 
                     <div className='flex flex-col text-xs text-white space-y-3'>
                         <h1 className="font-bold">
@@ -43,6 +43,9 @@ const Footer = () => {
                         </h1>
                         <Link href="/about">
                             {t('About The Project')}
+                        </Link>
+                        <Link href="/faq">
+                            FAQs
                         </Link>
 
                     </div>
@@ -57,5 +60,5 @@ const Footer = () => {
         </footer>
      );
 }
- 
+
 export default Footer;

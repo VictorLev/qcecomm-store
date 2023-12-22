@@ -29,8 +29,6 @@ const Billboard: React.FC<BillboardProps> = ({
       exitBeforeEnter: false,
       delay: 3000
     })
-
-    console.log(data)
     return (
       <div className="h-[25rem] mb-8">
 

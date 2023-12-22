@@ -46,20 +46,20 @@ const HomePageContent: React.FC<HomePageContentProps> = ({
       <div className="bg-[#F2F2F2]">
         <HomeBillboard data={billboard} />
           <Container>
-              <div className="space-y-10 pb-10">
+              <div className="space-y-20 pb-20">
                   <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
                       <ProductList title={t('featured products')} items={featuredProducts}/>
                   </div>
               </div>
-              <div className="space-y-10 pb-10">
+              <div className="space-y-20 pb-20">
                 <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
                   <div className="font-bold text-3xl">
-                    Shop by Category {/*To Translate*/}
+                    {t("Shop by Category")} {/*To Translate*/}
                   </div>
                     <CategoryCards/>
                 </div>
               </div>
-              <div className="space-y-10 pb-10">
+              <div className="space-y-20 pb-20">
                 <div className="relative flex flex-col items-center w-full h-full bg-cover bg-center rounded"
                   style={{
                     backgroundImage: `url(${mapleBackground.src})`,
@@ -67,17 +67,28 @@ const HomePageContent: React.FC<HomePageContentProps> = ({
                     height: '100%'
                   }}>
                     <div className="flex m-auto text-center items-center font-bold text-4xl p-2">
-                    🍁 LIQUIDATION SALE! 40% OFF on all maple products 🍁 {/*To Translate*/}
+                      {t("sales-banner")}
                     </div>
                     <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8 pb-4">
                         <ProductList title={""} items={onFoodProducts}/>
                     </div>
-
-
                 </div>
-                <Map/>
+
               </div>
           </Container>
+          <Container>
+            <div className="space-y-20 pb-10">
+              <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+                  <div className="font-bold text-3xl">
+                  {t("Where to Find Us")} {/*To Translate*/}
+                  </div>
+                </div>
+            </div>
+          </Container>
+          <div>
+            <Map/>
+          </div>
+
         </div>
     )
 }

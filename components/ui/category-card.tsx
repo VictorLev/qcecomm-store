@@ -32,7 +32,7 @@ const CategoryCard: React.FC<CategoryCard> = ({
                 >
                 <div className="z-10 flex justify-center ">
                   <div className=" font-semibold text-2xl text-black bg-[#f3f7ff] rounded mt-2 p-1">
-                    {data.nameEn}  {/* To Translate */}
+                  {data[name as keyof Category].toString()}
                   </div>
                 </div>
             </div>
