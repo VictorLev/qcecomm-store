@@ -3,6 +3,7 @@
 import { Billboard as BillboardType } from "@/type";
 import { useState } from "react";
 import { useTransition, animated } from "@react-spring/web";
+import Container from "./ui/container";
 
 
 
@@ -30,14 +31,14 @@ const Billboard: React.FC<BillboardProps> = ({
       delay: 3000
     })
     return (
-      <div className="h-[25rem] mb-8">
 
-            <div className="absolute m-4 shadow-inner shadow-gray-600 w-11/12 h-[25rem] bg-cover bg-center rounded"
+      <div className="h-[25rem] my-8 ">
+            <div className="absolute rounded shadow-inner max-w-7xl shadow-gray-600 w-full h-[25rem] bg-cover bg-center  overflow-hidden"
              style={{backgroundImage: `url(${data.images[0].url})`}}>
             </div>
             {data.images.length > 1 && transitions((style, i) => (
               <animated.div
-                className="absolute m-4 rounded shadow-inner shadow-gray-600 w-11/12 h-[25rem] bg-cover bg-center will-change-[opacity]"
+                className="absolute rounded shadow-inner max-w-7xl shadow-gray-600 w-full h-[25rem] bg-cover bg-center will-change-[opacity] overflow-hidden"
                 style={{
                   ...style,
                   backgroundImage: `url(${data.images[i].url})`,
@@ -46,6 +47,7 @@ const Billboard: React.FC<BillboardProps> = ({
               </animated.div>
             ))}
       </div>
+
      );
 }
 
