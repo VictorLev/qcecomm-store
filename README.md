@@ -76,7 +76,7 @@ The website should now be accessible at **``http://localhost:3000``** by default
     - [Clerk](https://clerk.com/)
 
 - Payment Processing:
-    - To come
+    - Stripe
 
 
 ## :hearts:Contributing
