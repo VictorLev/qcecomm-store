@@ -15,6 +15,7 @@ import getCdays from "@/actions/get-cdays";
 import getSportsteams from "@/actions/get-sportsteams";
 import FilterColor from "./components/filterColor";
 import HomeBillboard from "@/components/home-billboard";
+import MobileFilters from "./components/mobile-filters";
 
 export const revalidate = 0;
 
@@ -126,6 +127,19 @@ const CategoryPageContent: React.FC<CategoryPageContentProps> = (
                 />
                 <div className="px-4 sm:px-6 lg:px-8 pb-24">
                     <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+                        <MobileFilters
+                          sizes={sizes}
+                          colors={colors}
+                          enSize={enSize}
+                          enColor={enColor}
+                          provinces={provinces}
+                          types={types}
+                          cdays={cdays}
+                          sportsteams={sportsteams}
+                          enProv={enProv}
+                          enType={enType}
+                          enCday={enCday}
+                          enSpor={enSpor} />
                         <div className="hidden lg:block">
                             <Filter
                                 valueKey="sizeId"

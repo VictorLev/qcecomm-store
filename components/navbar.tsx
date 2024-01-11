@@ -8,6 +8,7 @@ import Flag from "@/images/Fleur_de_lys_du_québec.svg";
 
 import {useTranslations} from 'next-intl';
 import { Category } from "@/type";
+import MobileNavBar from "./mobile-navbar";
 
 interface NavbarContentProps {
     categories: Category[]
@@ -25,22 +26,22 @@ const NavbarContent: React.FC<NavbarContentProps> = ({categories}) => {
             <Container>
                 <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 justify-center items-center">
                     <Link href="/" className="ml-4 gap-x-2 ">
-                        <p className="font-bold text-white sm:text-sm lg:text-2xl ">
-                            <span className="lg-view">{t('title')}</span>
-                            <span className="sm-view">{t('stitle')}</span>
+                        <p className="font-bold text-white text-2xl ">
+                            {t('title')}
                         </p>
                     </Link>
-                    <span className="lg-view">
-                        <Image className="mx-2 flex"
-                            priority
-                            src={Flag}
-                            height={28}
-                            width={28}
-                            alt="Quebec Flag here"
-                        />
-                    </span>
+                    <Image className="mx-2 flex"
+                        priority
+                        src={Flag}
+                        height={28}
+                        width={28}
+                        alt="Quebec Flag here"
+                    />
                     <MainNav data={categories} />
-                    <NavBarActions />
+                    <div className="hidden ml-auto lg:flex items-center gap-x-4">
+                      <NavBarActions />
+                    </div>
+                    <MobileNavBar data={categories} />
                 </div>
             </Container>
         </div>

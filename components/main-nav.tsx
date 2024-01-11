@@ -31,7 +31,7 @@ const MainNav: React.FC<MainNavProps> = ({
 
     return (
         <nav
-            className="mx-6 flex-wrap items-center space-x-1 lg:space-x-8 sm:flex-wrap sm:space-x-4"
+            className="hidden mx-6 lg:flex lg:flex-wrap items-center space-x-1 lg:space-x-8 sm:flex-wrap sm:space-x-4"
         >
             {routes.map((route) => (
                 <Link
